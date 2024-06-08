@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
+import mongoose from 'mongoose';
 import morgan from 'morgan';
 
 dotenv.config();
@@ -16,5 +17,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 const PORT = process.env.PORT;
+
+const dbConn = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URL);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+dbConn();
 
 app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
