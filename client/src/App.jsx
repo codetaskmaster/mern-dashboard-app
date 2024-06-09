@@ -20,7 +20,7 @@ const App = () => {
     [mode]
   );
   return (
-    <div className="app">
+    <div>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
