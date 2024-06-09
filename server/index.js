@@ -42,3 +42,5 @@ dbConn();
 app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
 /* Populate database only once */
 // User.insertMany(dataUser)
+// Product.insertMany(dataProduct);
+// ProductStat.insertMany(dataProductStat);
