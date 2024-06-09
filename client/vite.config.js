@@ -5,4 +5,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   define: { 'process.env': process.env },
+  resolve: {
+    alias: {
+      src: '/src',
+    },
+  },
 });
